@@ -4,13 +4,13 @@
 
 - **Passing draft:** Operator A is `ACTIVE` with an `authorisation_level` at or above the zone's `required_authorisation_level`, is logged in, and owns a `DRAFT` request that passes all four gates:
   - pilot `rating` covers the zone's `zone_class`, and the certification is current at `window_start` (certified less than 18 months before it)
-  - aircraft weight band is in the zone's `permitted_bands`, with no other `APPROVED` or `UNDER_REVIEW` request overlapping this window
+  - aircraft weight band is in the zone's `permitted_bands`, with no other `APPROVED` or `UNDER_REVIEW` request for the same aircraft overlapping this window
   - zone is an `active` zone from the catalogue, and `requested_altitude_metres` is at or below the zone's `ceiling_metres`
   - `window_start` is between 6 hours and 60 days from now, the window lasts 15–240 minutes, and no part of it falls inside the zone's curfew
 - **Failing draft:** Passing draft, with `requested_altitude_metres` 1 m above the zone's `ceiling_metres`
 - **Under review request:** Passing draft, submitted by operator A
 - **Rejected request:** Failing draft, submitted by operator A
-- **Reviewer call:** Send the `X-Reviewer-Id` header set to `<reviewer-id>`, an identifier of an existing reviewer
+- **Reviewer call:** Send the `X-Reviewer-Id` header set to a reviewer identity label (`docs/03-api-contract.md` Authentication & authorisation)
 
 ## API-FR-0XX: Submit of a passing draft moves it to UNDER_REVIEW
 
