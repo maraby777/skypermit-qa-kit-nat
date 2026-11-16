@@ -1,0 +1,169 @@
+{
+  "run_id": "2026-11-16-1519",
+  "arguments": { "max_rules": 3, "gate": "TIME_WINDOW" },
+  "rules_checked": 6,
+  "gaps_found": 6,
+  "results": [
+    {
+      "rule_reference": "TSD-4 §2.1",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-071",
+      "title": "Submit 5 h 59 min before window_start fails the TIME_WINDOW gate",
+      "verdict": "meets requirements",
+      "action": "kept",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §2.1",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-072",
+      "title": "Submit 5 h 59 min before window_start cites TSD-4 §2.1 for the TIME_WINDOW gate",
+      "verdict": "meets requirements",
+      "action": "kept",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §2.1",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-073",
+      "title": "Submit 6 h 1 min before window_start passes the TIME_WINDOW lead-time rule",
+      "verdict": "meets requirements",
+      "action": "kept",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §2.2",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-074",
+      "title": "Submit 60 days 1 min before window_start fails the TIME_WINDOW gate",
+      "verdict": "no requirements exist",
+      "action": "removed",
+      "reason": "Concrete expected result without doc support: the limit reads \"≤ 60 days before `window_start`\" with no reference point, while the lead-time row says \"between submission and `window_start`\" (../ct-gen-ai-skypermit/docs/06-business-rules.md:95, :94); the 1-minute setup margin could also land exactly on 60 days, which passes",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §2.2",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-075",
+      "title": "Submit 60 days 1 min before window_start cites TSD-4 §2.2 for the TIME_WINDOW gate",
+      "verdict": "no requirements exist",
+      "action": "removed",
+      "reason": "Citation is supported (\"Booked too far in advance | `TSD-4 §2.2`\", ../ct-gen-ai-skypermit/docs/06-business-rules.md:188), but the trigger is undefined: \"≤ 60 days before `window_start`\" names no moment to measure from (../ct-gen-ai-skypermit/docs/06-business-rules.md:95)",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §2.2",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-076",
+      "title": "Submit 59 days 23 h 59 min before window_start passes the TIME_WINDOW advance-booking rule",
+      "verdict": "meets requirements",
+      "action": "kept",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §3",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-077",
+      "title": "Submit with a 14-minute window fails the TIME_WINDOW gate",
+      "verdict": "meets requirements",
+      "action": "kept",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §3",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-078",
+      "title": "Submit with a 14-minute window cites TSD-4 §3 for the TIME_WINDOW gate",
+      "verdict": "meets requirements",
+      "action": "kept",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §3",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-079",
+      "title": "Submit with a 15-minute window passes the TIME_WINDOW duration rule",
+      "verdict": "meets requirements",
+      "action": "kept",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §3",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-080",
+      "title": "Submit with a 240-minute window passes the TIME_WINDOW duration rule",
+      "verdict": "meets requirements",
+      "action": "kept",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §3",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-081",
+      "title": "Submit with a 241-minute window fails the TIME_WINDOW gate",
+      "verdict": "meets requirements",
+      "action": "kept",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §3",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-082",
+      "title": "Submit with a 241-minute window cites TSD-4 §3 for the TIME_WINDOW gate",
+      "verdict": "meets requirements",
+      "action": "kept",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    },
+    {
+      "rule_reference": "TSD-4 §3",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-083",
+      "title": "Submit with window_end equal to window_start, TIME_WINDOW gate outcome",
+      "verdict": "no requirements exist",
+      "action": "kept",
+      "file": "test-cases/flight-requests/gate-rules.md"
+    }
+  ],
+  "open_questions": [
+    {
+      "rule_reference": "TSD-4 §2.2",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-074",
+      "case_action": "removed",
+      "missing": "The moment the \"≤ 60 days before window_start\" limit is measured from (submission, creation, or other); FlightRequest has no created_at field",
+      "checked": [
+        "../ct-gen-ai-skypermit/docs/06-business-rules.md:94",
+        "../ct-gen-ai-skypermit/docs/06-business-rules.md:95",
+        "../ct-gen-ai-skypermit/docs/01-data-model.md:79",
+        "../ct-gen-ai-skypermit/docs/05-open-questions.md:10",
+        "../ct-gen-ai-skypermit/docs/07-clarifications.md"
+      ]
+    },
+    {
+      "rule_reference": "TSD-4 §2.2",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-075",
+      "case_action": "removed",
+      "missing": "Same as API-FR-074: no reference point for the 60-day limit, so the failing trigger can't be set up with a defined outcome",
+      "checked": [
+        "../ct-gen-ai-skypermit/docs/06-business-rules.md:95",
+        "../ct-gen-ai-skypermit/docs/06-business-rules.md:188",
+        "../ct-gen-ai-skypermit/docs/05-open-questions.md:10"
+      ]
+    },
+    {
+      "rule_reference": "TSD-4 §3",
+      "gate": "TIME_WINDOW",
+      "case_id": "API-FR-083",
+      "case_action": "kept_blocked",
+      "missing": "Where a zero-length window (window_end = window_start) is refused: 400 at create, or a TIME_WINDOW gate failure at submit; 01 says only \"must be after window_start\" with no status or enforcement point; not tracked in 05",
+      "checked": [
+        "../ct-gen-ai-skypermit/docs/01-data-model.md:87",
+        "../ct-gen-ai-skypermit/docs/03-api-contract.md:135",
+        "../ct-gen-ai-skypermit/docs/06-business-rules.md:96",
+        "../ct-gen-ai-skypermit/docs/05-open-questions.md:10"
+      ]
+    }
+  ],
+  "skipped": []
+}
