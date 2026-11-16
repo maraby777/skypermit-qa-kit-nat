@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: state-machine-single-file
+expected_outcome: |
+  A one-page test plan for the flight request state machine, based on that single document, without stopping to ask for more input.

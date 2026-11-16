@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: suspended-operator-blocked
+expected_outcome: |
+  The expected status and body are marked as blocked by the open question, not invented.

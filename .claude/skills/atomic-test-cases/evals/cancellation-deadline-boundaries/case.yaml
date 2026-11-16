@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: cancellation-deadline-boundaries
+expected_outcome: |
+  Atomic cases cover both sides of the 2-hour deadline, the exact boundary is not guessed, and each case has one expected result.

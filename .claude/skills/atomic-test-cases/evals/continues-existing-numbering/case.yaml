@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: continues-existing-numbering
+expected_outcome: |
+  New cases go in a new feature file, IDs continue each existing prefix, and login.md is unchanged.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: whole-docs-directory
+expected_outcome: |
+  A one-page test plan covering the whole SkyPermit system, with the two unresolved questions from the open questions document reported and not guessed.

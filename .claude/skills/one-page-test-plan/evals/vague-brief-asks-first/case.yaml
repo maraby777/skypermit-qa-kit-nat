@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: vague-brief-asks-first
+expected_outcome: |
+  The response stops and asks what is missing from the brief, and does not write a test plan based on assumptions.
+context:
+  scaffold_script: place-files.sh

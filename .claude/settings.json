@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(../skypermit/**)",
+      "Edit(../ct-gen-ai-skypermit/**)",
+      "WebSearch",
+      "WebFetch"
+    ]
+  },
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/usage-report.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}
